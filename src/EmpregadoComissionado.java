@@ -3,7 +3,7 @@ import java.text.DecimalFormat;
 public class EmpregadoComissionado extends Empregado {
     double totalDeVendas,comissao;
 
-    public EmpregadoComissionado(String nome, long matricula, double comissao, double totalDeVendas) {
+    public EmpregadoComissionado(long matricula,String nome, double comissao, double totalDeVendas) {
         super(nome, matricula);
         this.comissao = comissao;
         this.totalDeVendas = totalDeVendas;
