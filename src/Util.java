@@ -1,4 +1,6 @@
 import javax.swing.JOptionPane.*;
+
+import static java.lang.Integer.decode;
 import static java.lang.Integer.parseInt;
 import static java.lang.Double.parseDouble;
 import static java.lang.Long.parseLong;
@@ -9,13 +11,29 @@ public class Util {
     private Controle controle = new Controle();
 
     public void menu(){
-        String aux = "1-Inserir\n2-Pesquisar\n3-Listar";
-        System.out.println(aux);
-        inserir();
-        pesquisar();
-        listar();
+        int opcao;
 
+        String aux = "1-Cadastrar\n2-Pesquisar\n3-Listar\n4. Finalizar";
 
+        while(true){
+            opcao = parseInt(showInputDialog(aux));
+            if(opcao==4)
+                return;
+
+            switch (opcao){
+                case 1:
+                    inserir();
+                    break;
+                case 2:
+                    pesquisar();
+                    break;
+                case 3:
+                    listar();
+                    break;
+                default:
+                    showInputDialog(null,"opcao invalida");
+            }
+        }
 
     }
 
